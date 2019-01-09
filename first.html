@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>First Program 09_01_19</title>
+    <script>
+        window.onload = function () {
+            while (c != 0) {
+                var c = prompt("Enter Your Choice 1.Add 2.Sub 3.Mul 4.Div 0.Exit");
+                if(c!=0 && c>0 && c<5){
+                    var a = parseInt(prompt("Enter 1st Number"));
+                    var b = parseInt(prompt("Enter 2nd Number"));
+                }
+                if (c == 1)
+                    alert("Addition is : " + (a + b));
+                else if (c == 2)
+                    alert("Substraction is : " + (a - b));
+                else if (c == 3)
+                    alert("Multiplication is : " + (a * b));
+                else if (c == 4)
+                    alert("Division is : " + (a / b));
+                else if(c!=0 && (c<0 || c>4))
+                    alert("Wrong Choice");
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
