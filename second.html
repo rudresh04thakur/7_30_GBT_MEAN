@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Second Program 09_01_19</title>
+    <script>
+        window.onload = function () {
+            var array = ["Gopal", "Thakur", 27, "Nanded", 1];
+            
+            var json = {
+                "name": "Gopal", "surname": "Thakur", "age": 27, "city": "Nanded", "Exp": 1
+            }
+            document.body.innerHTML += "<hr>for loop<hr>";
+            //for(inti;condition;counter){}
+            for (var i = 0; i < array.length; i++) {
+                document.body.innerHTML += "Value at Index : " + i + " > " + array[i] + "<br>";
+            }
+            document.body.innerHTML += "<hr>for...in loop<hr>";
+
+            //Specialy design for objects
+            for (var key in json) {
+                document.body.innerHTML += "Value at Key : " + key + " > " + json[key] + "<br>";
+            }
+            
+            document.body.innerHTML += "<hr>for...of loop<hr>";
+            //return the element of array
+            for(var element of array){
+                document.body.innerHTML += "Value at of : "+ element + "<br>";
+            }
+            
+            document.body.innerHTML += "<hr>forEach loop<hr>";
+
+            array.forEach(function(element,index){
+                document.body.innerHTML += "Value at Index : " + index + " > " + element + "<br>";
+            });
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
