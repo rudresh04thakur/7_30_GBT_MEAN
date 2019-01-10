@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +17,13 @@
                     code;
                 }
             (3) -----> Arrow function / Lambda function even, it is alternative for anonymus function
-                ([param])=>{
+                variable/event = ([param])=>{
                     code;
                 }
 
                 or
 
-                ([param])=>code
+                variable/event = ([param])=>code
 
             (4) -----> Invoke function
                 (function([param]){
@@ -35,12 +36,112 @@
                     code
                 })([arag]);
 
-        
         */
-    
+
+        // function mathOperation(a, b, c) {
+        //     if (c == 1)
+        //         return a + b;
+        //     else if (c == 2)
+        //         return a - b
+        //     else if (c == 3)
+        //         return a * b
+        //     else if (c == 4)
+        //         return a / b
+        // }
+
+        //window.onload = alert(mathOperation(2,3,4));
+        // math = (a, b, c) =>{
+        //     if (c == 1)
+        //         return a + b;
+        //     else if (c == 2)
+        //         return a - b
+        //     else if (c == 3)
+        //         return a * b
+        //     else if (c == 4)
+        //         return a / b
+        // }
+        // window.onload = alert(math(2,3,4)); 
+
+        // function math(c){
+        //     //alert(c);
+        //     var a = document.getElementById("1st").value;
+        //     var b = document.getElementById("2nd").value;
+        //     document.getElementById("ans").value = eval(parseInt(a) +c+ parseInt(b));
+        // }
+
+        // math = function(c) {
+        //     //alert(c);
+        //     var a = document.getElementById("1st").value;
+        //     var b = document.getElementById("2nd").value;
+        //     document.getElementById("ans").value = eval(parseInt(a) +c+ parseInt(b));
+        // }
+
+        math = (c) => {
+            //alert(c);
+            var a = document.getElementById("1st").value;
+            var b = document.getElementById("2nd").value;
+            document.getElementById("ans").value = eval(parseInt(a) + c + parseInt(b));
+        }
+
+        //math(); simple call the function
+        //(function(){}()); invoke call the function
+        //function math(a,b,function(){})
+
+        function addRow(cb) {
+            if (cb()) {
+                var tr = document.createElement("tr");
+                var td_1 = document.createElement("td");
+                var td_2 = document.createElement("td");
+                var td_3 = document.createElement("td");
+                var td_4 = document.createElement("td");
+                var input_1 = document.createElement("input");
+                input_1.setAttribute("placeholder","Enter Name");
+                var input_2 = document.createElement("input");
+                input_2.setAttribute("placeholder","Enter Age");
+                var input_3 = document.createElement("input");
+                input_3.setAttribute("placeholder","Enter Mobile");
+                var input_4 = document.createElement("input");
+                input_4.setAttribute("type","button");
+                input_4.value = "Remove";
+                input_4.onclick = function(){
+                    this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode);
+                }
+                td_1.appendChild(input_1);
+                td_2.appendChild(input_2);
+                td_3.appendChild(input_3);
+                td_4.appendChild(input_4);
+                tr.appendChild(td_1);
+                tr.appendChild(td_2);
+                tr.appendChild(td_3);
+                tr.appendChild(td_4);
+                document.getElementById("main").appendChild(tr);
+            }
+        }
     </script>
 </head>
+
 <body>
+    <input id="1st" placeholder="Enter 1st Number" />
+    <input id="2nd" placeholder="Enter 1st Number" />
+    <input id="ans" placeholder="Ans" />
+    <button onclick="math(this.innerHTML)">+</button>
+    <button onclick="math(this.innerHTML)">-</button>
+    <button onclick="math(this.innerHTML)">*</button>
+    <button onclick="math(this.innerHTML)">/</button>
     
+    <hr>
+    <button onclick="addRow(function(){return confirm('r u sure to add')})">Add</button>
+    <h2>Employee Details</h2>
+    <table border="2">
+        <thead>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Mobile</th>
+        </thead>
+        <tbody id="main">
+
+        </tbody>
+    </table>
 </body>
+
 </html>
